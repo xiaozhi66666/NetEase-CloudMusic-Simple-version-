@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import Play from "@/views/Play";
+import Play from "@/views/Play/index.vue";
 Vue.use(VueRouter);
 
 const routes = [{
@@ -31,6 +31,10 @@ const routes = [{
                 },
             },
         ],
+    },
+    {
+        path: "/play",
+        component: Play,
     },
 ];
 

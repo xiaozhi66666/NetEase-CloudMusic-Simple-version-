@@ -72,7 +72,7 @@
 
 <script>
 // 获取歌曲详情和 歌曲的歌词接口
-import { getSongByIdApi, getLyricByIdApi } from "@/apis";
+import { getSongByIdApi, getLyricByIdApi } from "@/api";
 import { Icon } from "vant";
 export default {
   components: {
@@ -100,7 +100,7 @@ export default {
       // 获取歌曲详情, 和歌词方法
       const res = await getSongByIdApi(this.id);
       this.songInfo = res.data.songs[0];
-      console.log(this.songInfo);
+      // console.log(this.songInfo);
       // 获取-并调用_formatLyr方法, 处理歌词
       const lyrContent = await getLyricByIdApi(this.id);
       const lyricStr = lyrContent.data.lrc.lyric;
@@ -112,9 +112,9 @@ export default {
       // 可以看network观察歌词数据是一个大字符串, 进行拆分.
       let reg = /\[.+?\]/g; //
       let timeArr = lyricStr.match(reg); // 匹配所有[]字符串以及里面的一切内容, 返回数组
-      console.log(timeArr); // ["[00:00.000]", "[00:01.000]", ......]
+      // console.log(timeArr); // ["[00:00.000]", "[00:01.000]", ......]
       let contentArr = lyricStr.split(/\[.+?\]/).slice(1); // 按照[]拆分歌词字符串, 返回一个数组(下标为0位置元素不要,后面的留下所以截取)
-      console.log(contentArr);
+      // console.log(contentArr);
       let lyricObj = {}; // 保存歌词的对象, key是秒, value是显示的歌词
       timeArr.forEach((item, index) => {
         // 拆分[00:00.000]这个格式字符串, 把分钟数字取出, 转换成秒
@@ -128,7 +128,7 @@ export default {
         lyricObj[ms + Number(ss)] = contentArr[index];
       });
       // 返回得到的歌词对象(可以打印看看)
-      console.log(lyricObj);
+      // console.log(lyricObj);
       return lyricObj;
     },
     audioStart() {
@@ -161,7 +161,7 @@ export default {
   mounted() {
     this.getSong();
     this.showLyric();
-    console.log(this.$route.query.id);
+    // console.log(this.$route.query.id);
   },
 };
 </script>

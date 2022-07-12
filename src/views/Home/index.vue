@@ -39,7 +39,8 @@
       v-for="item in newList"
       :key="item.id"
       :name="item.name"
-      :author="item.song.artists[0]['name']"
+      :author="item.song.artists[0].name"
+      :id="item.id"
     ></SearchList>
     <!-- 最新音乐E -->
   </div>
@@ -85,7 +86,7 @@ export default {
           limit: 20,
         });
         this.newList = res.data.result;
-        console.log(res);
+        // console.log(res);
       } catch (error) {
         console.log(error);
       }
@@ -95,28 +96,25 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.home-container {
-  .title {
-    background-color: #c71d24;
-    color: #fff;
-  }
-  .van-grid-item__content {
-    padding: 0 5px;
-    // .van-item-img {
-    // }
-  }
-  .music-name {
-    font-size: 12px;
-    text-align: left;
-    line-height: 20px;
-    width: 100%;
-    padding: 0 5px;
-    box-sizing: border-box;
-    height: 37px;
-  }
+.title {
+  color: #fff;
+}
+.van-grid-item__content {
+  padding: 0 5px;
+  // .van-item-img {
+  // }
+}
+.music-name {
+  font-size: 12px;
+  text-align: left;
+  line-height: 20px;
+  width: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
+  height: 37px;
+}
 
-  /deep/.van-grid-item__content {
-    padding: 10px 0px;
-  }
+/deep/.van-grid-item__content {
+  padding: 10px 0px;
 }
 </style>

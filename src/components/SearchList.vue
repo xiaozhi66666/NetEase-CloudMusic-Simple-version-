@@ -1,8 +1,8 @@
 <template>
   <div>
-    <van-cell :label="author" :title="name" center :id="id">
+    <van-cell :label="author + '``' + name" :title="name" center :key="id">
       <template>
-        <van-icon color="#000" name="play" size="28" />
+        <van-icon color="#000" name="play" size="28" @click="goPlay" />
       </template>
     </van-cell>
   </div>
@@ -23,7 +23,14 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    goPlay() {
+      this.$router.push({
+        path: "/play",
+        query: { id: this.id },
+      });
+    },
+  },
 };
 </script>
 

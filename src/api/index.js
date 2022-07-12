@@ -1,6 +1,7 @@
 // 导入请求推荐歌单的方法
 import { getRecommendList, getNewList } from "@/api/home";
 import { getHotList, getSearchList } from "@/api/search";
+import { getSongById, getLyricById } from "@/api/Play";
 // 对导进来的请求方法进行再一次的封装并进行导出
 // 导出  ====首页====推荐歌单API====
 export const getRecommendListAPI = getRecommendList;
@@ -10,3 +11,5 @@ export const getNewListAPI = getNewList;
 export const getHotListAPI = getHotList;
 // 导出  ====首页====搜索结果API====
 export const getSearchListAPI = getSearchList;
+export const getSongByIdApi = getSongById;
+export const getLyricByIdApi = getLyricById;
