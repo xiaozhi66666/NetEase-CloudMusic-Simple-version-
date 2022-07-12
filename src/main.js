@@ -12,19 +12,19 @@ import {
     Cell,
     Grid,
     GridItem,
+    Icon,
     Image as VanImage,
+    Col,
+    Row,
+    Search,
+    Tag,
+    List,
 } from "vant";
-import { getRecommendListAPI } from "@/api";
-// console.log(getRecommendListAPI());
-async function fn() {
-    try {
-        const res = await getRecommendListAPI();
-        console.log(res);
-    } catch (error) {
-        console.log("错了");
-    }
-}
-fn();
+Vue.use(List);
+Vue.use(Tag);
+Vue.use(Search);
+Vue.use(Col);
+Vue.use(Row);
 Vue.use(VanImage);
 Vue.use(Grid);
 Vue.use(GridItem);
@@ -32,6 +32,7 @@ Vue.use(Cell);
 Vue.use(NavBar);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
+Vue.use(Icon);
 Vue.config.productionTip = false;
 
 new Vue({

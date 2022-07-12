@@ -3,7 +3,7 @@
     <!-- 网易云音乐主页面头部S -->
     <div class="header">
       <!-- 标题随路由中的meta中自定义的title进行切换 -->
-      <van-nav-bar :title="$route.meta.title" />
+      <van-nav-bar :title="$route.meta.title" class="nav-barheader" fixed />
     </div>
     <!-- 网易云音乐主页面头部E -->
     <!-- 放置二级路由页面，中间切换部分 -->
@@ -44,5 +44,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
+.header {
+  padding-top: 48px;
+}
+.footer {
+  padding-top: 46px;
+}
 </style>

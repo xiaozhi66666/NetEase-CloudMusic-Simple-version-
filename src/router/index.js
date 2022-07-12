@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+// import Play from "@/views/Play";
 Vue.use(VueRouter);
 
 const routes = [{
